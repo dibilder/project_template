@@ -31,6 +31,14 @@ pipeline {
                 }
             }
         }
+		stage("docker push") {
+            steps {
+                echo " ============== start pushing image =================="
+                sh '''
+                docker push dibilder/toolbox:latest
+                '''
+            }
+        }
 		
     }
 }
